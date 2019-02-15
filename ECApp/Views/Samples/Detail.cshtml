@@ -1,0 +1,56 @@
+﻿@model ECApp.Models.Film
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+<div class="alert-success">
+    <h3>@ViewBag.Mensaje</h3>
+</div>
+<div>
+    <h4>Film</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImdbLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImdbLink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImdbScore)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImdbScore)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Back to List</a>
+</div>

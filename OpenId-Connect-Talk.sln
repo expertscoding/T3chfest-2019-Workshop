@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28016.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28531.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "Host\Host.csproj", "{8DE68B72-8ADA-4B13-A115-509A89B11D81}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{55E04A8F-CE1C-4EA8-8BCC-46ED352E3BA5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{8E6FC917-E084-4C25-9191-09534D10D377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECAuthorization", "ECAuthorization\ECAuthorization.csproj", "{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{DCF213F2-39C3-4332-B720-18E6C35B9C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF213F2-39C3-4332-B720-18E6C35B9C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF213F2-39C3-4332-B720-18E6C35B9C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{29991655-E9B2-46CF-9FE9-BAD66ED3A9D6} = {8E6FC917-E084-4C25-9191-09534D10D377}
 		{C76E81A6-FC3D-4845-966D-1711C0123C92} = {55E04A8F-CE1C-4EA8-8BCC-46ED352E3BA5}
 		{DCF213F2-39C3-4332-B720-18E6C35B9C9F} = {8E6FC917-E084-4C25-9191-09534D10D377}
+		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4} = {8E6FC917-E084-4C25-9191-09534D10D377}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {723B70AF-275B-4FB8-9A2D-8D0C17CB1A3D}

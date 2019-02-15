@@ -12,7 +12,7 @@ namespace Host.Configuration
     {
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
-            return new[]
+            var lista = new[]
             {
                 // some standard scopes from the OIDC spec
                 new IdentityResources.OpenId(),
@@ -22,6 +22,10 @@ namespace Host.Configuration
                 // custom identity resource with some consolidated claims
                 new IdentityResource("custom.profile", new[] { JwtClaimTypes.Name, JwtClaimTypes.Email, "location" })
             };
+
+            ((IdentityResources.Profile)lista[1]).UserClaims.Add(JwtClaimTypes.Role);
+
+            return lista;
         }
 
         public static IEnumerable<ApiResource> GetApiResources()

@@ -36,13 +36,13 @@ namespace Host
                 .AddInMemoryIdentityResources(Resources.GetIdentityResources())
                 .AddInMemoryApiResources(Resources.GetApiResources())
                 .AddInMemoryClients(Clients.Get())
-                //.AddAspNetIdentity<ApplicationUser>();
-                .AddActiveDirectoryIdentity<ApplicationUser>(options =>
-                {
-                    options.DomainName = Configuration.GetSection("ActiveDirectory")?["DomainName"];
-                    options.DomainUser = Configuration.GetSection("ActiveDirectory")?["DomainUser"];
-                    options.DomainCryptPassword = Configuration.GetSection("ActiveDirectory")?["DomainPassword"];
-                });
+                .AddAspNetIdentity<ApplicationUser>();
+            //.AddActiveDirectoryIdentity<ApplicationUser>(options =>
+            //{
+            //    options.DomainName = Configuration.GetSection("ActiveDirectory")?["DomainName"];
+            //    options.DomainUser = Configuration.GetSection("ActiveDirectory")?["DomainUser"];
+            //    options.DomainCryptPassword = Configuration.GetSection("ActiveDirectory")?["DomainPassword"];
+            //});
 
             services.AddAuthentication()
                 //Google Developer Console https://console.cloud.google.com/apis/credentials

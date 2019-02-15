@@ -1,5 +1,8 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
+using ECAuthorization.ECApp;
+using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -39,11 +42,14 @@ namespace ECApp
                 options.DefaultScheme = "Cookies";
                 options.DefaultChallengeScheme = "oidc";
             })
-            .AddCookie("Cookies")
+            .AddCookie("Cookies", options =>
+            {
+                options.AccessDeniedPath = new PathString("/Forbidden.html");
+            })
             .AddOpenIdConnect("oidc", options =>
             {
                 options.SignInScheme = "Cookies";
-
+                
                 options.Authority = Configuration.GetValue("AuthorityUrl", "http://localhost:5000/");
                 options.RequireHttpsMetadata = false;
 
@@ -58,6 +64,8 @@ namespace ECApp
 
                 options.ClaimActions.Remove("amr");
                 options.ClaimActions.MapJsonKey("website", "website");
+                options.ClaimActions.MapJsonKey(JwtClaimTypes.Role, JwtClaimTypes.Role);
+                options.ClaimActions.MapJsonKey(JwtClaimTypes.EmailVerified, JwtClaimTypes.EmailVerified);
 
                 options.SignedOutRedirectUri = AppUrl;
 
@@ -71,7 +79,29 @@ namespace ECApp
                 };
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddSessionStateTempDataProvider();
+
+            services.AddSession();
+
+            // Authorization Policies
+            //services.AddAuthorization(opt =>
+            //{
+            //    opt.AddPolicy("AdminPolicy", pol => pol.RequireRole("Admin"));
+            //});
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("HasValidEmail", pol => pol.AddRequirements(new EmailRequirement(true)));
+
+                opt.AddPolicy("FilmPolicy", pol => pol.AddRequirements(new VIPRequirement()));
+            });
+
+            services.AddSingleton<IAuthorizationHandler, EmailHandler>();
+            services.AddSingleton<IAuthorizationHandler, FilmAuthorizationHandler>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,16 +120,18 @@ namespace ECApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            
+            app.UseSession();
 
             app.UseAuthentication();
-
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseCookiePolicy();
         }
     }
 }

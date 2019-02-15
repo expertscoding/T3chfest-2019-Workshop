@@ -66,10 +66,12 @@ namespace Host
 
                     result = userMgr.AddClaimsAsync(bob, new Claim[]{
                         new Claim(JwtClaimTypes.Name, "Antonio Marín"),
+                        new Claim(JwtClaimTypes.Role, "Admin"),
+                        new Claim(JwtClaimTypes.Role, "VIP"),
                         new Claim(JwtClaimTypes.GivenName, "Antonio"),
                         new Claim(JwtClaimTypes.FamilyName, "Marín"),
                         new Claim(JwtClaimTypes.Email, "antonio.marin@expertscoding.es"),
-                        new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                        new Claim(JwtClaimTypes.EmailVerified, "false", ClaimValueTypes.Boolean),
                         new Claim(JwtClaimTypes.WebSite, "http://www.expertscoding.es"),
                         new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", IdentityServer4.IdentityServerConstants.ClaimValueTypes.Json),
                         new Claim("location", "somewhere")

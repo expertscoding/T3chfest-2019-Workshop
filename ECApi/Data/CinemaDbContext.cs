@@ -21,6 +21,7 @@ namespace ECApi.Data
             filmEntity.Property(f => f.Title).HasColumnName("movie_title");
             filmEntity.Property(f => f.Year).HasColumnName("title_year");
             filmEntity.Property(f => f.ImdbScore).HasColumnName("imdb_score");
+            filmEntity.Ignore(f => f.Keywords);
         }
     }
 }

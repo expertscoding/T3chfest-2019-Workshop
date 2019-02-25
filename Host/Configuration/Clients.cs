@@ -5,6 +5,7 @@
 using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Host.Configuration
 {
@@ -56,6 +57,38 @@ namespace Host.Configuration
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
                         "custom.profile",
+                        "ECApi"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "postman",
+                    ClientName = "Postman App",
+                    ClientUri = "https://www.getpostman.com/",
+
+                    ClientSecrets = 
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris = {"https://www.getpostman.com/oauth2/callback"},
+
+                    AllowOfflineAccess = true,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    AlwaysSendClientClaims = true,
+                    Claims =
+                    {
+                        new Claim("role", "client-role"),
+                        new Claim("otro", "another")
+                    },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
                         "ECApi"
                     }
                 }

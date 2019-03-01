@@ -8,7 +8,7 @@ namespace ECApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize("ECApiPolicy")]
+    
     public class FilmsController : ControllerBase
     {
         private readonly CinemaDbContext context;
@@ -29,7 +29,10 @@ namespace ECApi.Controllers
             return context.Films.Find(id);
         }
 
-        public IActionResult Post([FromBody]Film film)
+        [HttpPost]
+        [Authorize("DAY_1")]
+        [Authorize]
+        public IActionResult Post(Film film)
         {
 
             if (ModelState.IsValid)
@@ -46,7 +49,9 @@ namespace ECApi.Controllers
             return BadRequest();
         }
 
-        public IActionResult Patch([FromBody]Film film)
+        [HttpPatch]
+        [Authorize("DAY_9")]
+        public IActionResult Patch(Film film)
         {
 
             //Model will only contains informed changed fields so we don´t validate model

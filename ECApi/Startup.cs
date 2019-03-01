@@ -1,4 +1,5 @@
 ﻿using ECApi.Data;
+using ECAuthorization.ECApi;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +42,10 @@ namespace ECApi
                     options.ApiSecret = Configuration.GetValue<string>("ApiSecret");
                 });
 
-            services.AddAuthorization(options => options.AddPolicy("ECApiPolicy", builder=>builder.RequireScope("ECApi")));
+            services.AddAuthorization(options => options.AddPolicy("ECApiPolicy", builder => builder.RequireScope("ECApi")));
+
+            services.AddSingleton<IAuthorizationPolicyProvider, ECPolicyProvider>();
+            services.AddTransient(typeof(IAuthorizationHandler), typeof(DayHandler));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28531.58
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "Host\Host.csproj", "{8DE68B72-8ADA-4B13-A115-509A89B11D81}"
 EndProject
@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosts", "Hosts", "{55E04A8F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{8E6FC917-E084-4C25-9191-09534D10D377}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECAuthorization", "ECAuthorization\ECAuthorization.csproj", "{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECAuthorization", "ECAuthorization\ECAuthorization.csproj", "{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DockerLauncher", "DockerLauncher", "{0B3A71A9-4B1C-40F9-B772-5E357AA9B074}"
+	ProjectSection(SolutionItems) = preProject
+		build.yml = build.yml
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

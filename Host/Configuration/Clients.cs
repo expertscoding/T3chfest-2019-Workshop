@@ -44,9 +44,12 @@ namespace Host.Configuration
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     AllowAccessTokensViaBrowser = false,
 
-                    RedirectUris = { "http://localhost:19153/signin-oidc" },
-                    FrontChannelLogoutUri = "http://localhost:19153/signout-oidc",
-                    PostLogoutRedirectUris = { "http://localhost:19153/signout-callback-oidc" },
+                    //RedirectUris = { "http://localhost:19153/signin-oidc" },
+                    //FrontChannelLogoutUri = "http://localhost:19153/signout-oidc",
+                    //PostLogoutRedirectUris = { "http://localhost:19153/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:21402/signin-oidc" },
+                    FrontChannelLogoutUri = "http://localhost:21402/signout-oidc",
+                    PostLogoutRedirectUris = { "http://localhost:21402/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
                     AlwaysSendClientClaims = true,

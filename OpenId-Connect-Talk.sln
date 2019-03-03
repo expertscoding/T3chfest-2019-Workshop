@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28621.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "Host\Host.csproj", "{8DE68B72-8ADA-4B13-A115-509A89B11D81}"
 EndProject
@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DockerLauncher", "DockerLau
 		build.yml = build.yml
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuthNativeFlow", "OAuthNativeFlow\OAuthNativeFlow.csproj", "{3C5719F2-DF69-4477-A845-7B9A90B345CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthNativeFlow.Droid", "Droid\OAuthNativeFlow.Droid.csproj", "{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,16 @@ Global
 		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C5719F2-DF69-4477-A845-7B9A90B345CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C5719F2-DF69-4477-A845-7B9A90B345CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C5719F2-DF69-4477-A845-7B9A90B345CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C5719F2-DF69-4477-A845-7B9A90B345CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +80,8 @@ Global
 		{C76E81A6-FC3D-4845-966D-1711C0123C92} = {55E04A8F-CE1C-4EA8-8BCC-46ED352E3BA5}
 		{DCF213F2-39C3-4332-B720-18E6C35B9C9F} = {8E6FC917-E084-4C25-9191-09534D10D377}
 		{DCF27BEC-B342-4B8D-8D57-78B3C0ADABD4} = {8E6FC917-E084-4C25-9191-09534D10D377}
+		{3C5719F2-DF69-4477-A845-7B9A90B345CB} = {8E6FC917-E084-4C25-9191-09534D10D377}
+		{EE2F865B-1504-4CFF-8DE0-B9C65D9CED5E} = {8E6FC917-E084-4C25-9191-09534D10D377}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {723B70AF-275B-4FB8-9A2D-8D0C17CB1A3D}

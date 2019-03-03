@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  host:
+    image: ${DOCKER_REGISTRY}host
+    container_name: demoHost
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*
+    ports:
+      - "50000:80"
+    networks:
+      - demo
+
+
+
+networks:
+  demo:
+
+  

@@ -8,7 +8,7 @@ namespace ECApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+    [Authorize]
     public class FilmsController : ControllerBase
     {
         private readonly CinemaDbContext context;
@@ -20,18 +20,19 @@ namespace ECApi.Controllers
         }
 
         [HttpGet]
+        [Authorize("ECApiPolicy")]
         public ActionResult<IEnumerable<Film>> Get() => context.Films.OrderByDescending(f => f.ImdbScore).Take(50).ToList();
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [Authorize("ECApiPolicy")]
         public ActionResult<Film> Get(int id)
         {
             return context.Films.Find(id);
         }
 
         [HttpPost]
-        [Authorize("DAY_1")]
-        [Authorize]
+        //[Authorize("DAY_1")]
         public IActionResult Post(Film film)
         {
 
@@ -50,7 +51,7 @@ namespace ECApi.Controllers
         }
 
         [HttpPatch]
-        [Authorize("DAY_9")]
+        //[Authorize("DAY_9")]
         public IActionResult Patch(Film film)
         {
 

@@ -53,8 +53,8 @@ namespace ECApp
                 options.Authority = Configuration.GetValue("AuthorityUrl", "http://localhost:5000/");
                 options.RequireHttpsMetadata = false;
 
-                options.ClientSecret = "secret";
                 options.ClientId = "ECApp";
+                options.ClientSecret = "secret";
                 options.ResponseType = "code id_token";
 
                 options.Scope.Clear();
@@ -80,16 +80,16 @@ namespace ECApp
             });
 
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddSessionStateTempDataProvider();
 
             services.AddSession();
 
             // Authorization Policies
-            //services.AddAuthorization(opt =>
-            //{
-            //    opt.AddPolicy("AdminPolicy", pol => pol.RequireRole("Admin"));
-            //});
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("AdminPolicy", pol => pol.RequireRole("Admin"));
+            });
             services.AddAuthorization(opt =>
             {
                 opt.AddPolicy("HasValidEmail", pol => pol.AddRequirements(new EmailRequirement(true)));

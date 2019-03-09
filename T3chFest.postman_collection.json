@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "6473d01a-150f-496e-b046-102af9cf6065",
+		"name": "T3chFest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetFilms",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjk2M2IyODg1ZmU1ZDU4Nzc1ZmIyMjhjYThkOGU4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NDkyOTkwOTksImV4cCI6MTU0OTMwMjY5OSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoxOTE1NCIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjE5MTU0L3Jlc291cmNlcyIsIkVDQXBpIl0sImNsaWVudF9pZCI6IkNsaWVudEVDQXBpIiwic2NvcGUiOlsiRUNBcGkiXX0.WvofyyylIV0H1e79F7jRQUMii9CAHath3vRa9XXi99dGuYW0ZU4omn0O3taLNT_NfAGdMFKZyMZOBcczBTRqH1qrLc4D84VHA1zhiiY-70ronUL7X7uA8W8PqKey6PZiJNOkVKE8oXSYPTDr6BDCA8JM6tGELcLU4XxwkeZI_nJfY9ulX5IQfl1Rw87L0mBeFtEbXm1WK2nqAirKBCiz_Xbbe59VALKRwnep-3JnNOY0D-oAhBaQfyh5USICTmjbdXPtPk3Dw0zo7qYBuTHEzc1nT_N_InWTOKr49Ei0Bjs0wvII3-yTmC5wmfY6ThThomKwTQRDJTroHW-YRP7RhQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:19150/api/Films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19150",
+					"path": [
+						"api",
+						"Films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewFilm",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjk2M2IyODg1ZmU1ZDU4Nzc1ZmIyMjhjYThkOGU4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NTEyOTE1NzUsImV4cCI6MTU1MTI5NTE3NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoxOTE1NCIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjE5MTU0L3Jlc291cmNlcyIsIkVDQXBpIl0sImNsaWVudF9pZCI6IkNsaWVudEVDQXBpIiwic2NvcGUiOlsiRUNBcGkiXX0.RKUm16Qbv4YGSGiG9PN2WqRq7KcwTdJ1S-Z8Zna07hw8UwXolx1ha-UIISNETwpeVpfKOSTRZgi8WUxmOltPd7bXwhkwzEGBjiwLKtwZj3HeAi53djyUxaohoT2uBz5cfHCp9GnGTn2LkrtaTST1NL0o2lN0hwKQg5wxXkIjKV-zwb1H3VXHSKzlQm81YPbzqQOpOqD1IaV_jVbDzB3aXNLbHWgaYm6YEvtPzpajkbTr96hi-9ZjbLw-thS42X2sPHEKA12YQJnyfjE7C_3JEDaqQa1Am1aBNv9ZY5Rj-ZY3UeKNgkjUryKRHRF-M7VY8tXw4Efkb2YU10HaT0K_Nw",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {    \"title\": \"El Bar\",\n        \"director\": \"Alex de la Iglesia\",\n        \"year\": 2017,\n        \"imdbLink\": \"https://www.imdb.com/title/tt5121816/?ref_=nv_sr_1\",\n        \"imdbScore\": 6.3,\n        \"keywords\": [\n            \"comedy\",\n            \"horror\",\n            \"thriller\"\n        ]\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:19150/api/Films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19150",
+					"path": [
+						"api",
+						"Films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjk2M2IyODg1ZmU1ZDU4Nzc1ZmIyMjhjYThkOGU4IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1NTE0NTQzNzMsImV4cCI6MTU1MTQ1Nzk3MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoxOTE1NCIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjE5MTU0L3Jlc291cmNlcyIsIkVDQXBpIl0sImNsaWVudF9pZCI6IkNsaWVudEVDQXBpIiwic2NvcGUiOlsiRUNBcGkiXX0.leJGJuzynBWrqMTzET5HVRuhFgRBhkMctxkE8gFTSLBiXoU2VEGPoW0PXWbzKN75ke1wic7UafmxDaEX8LUihwR0SbVb2dLrW1AjcQRPOui5i8i8VQ6O-RPp4GCrx_gJQdW2xr3E6pn0a5Xhf1fbfcnqtSH0crzZNTTFFgy7i78w2fAeq-Lo4UCcnqNBWKQ0-J8IEKrSYlDWFTsY3KlIWjATPX1JVaL3mPXLTamOXEWuFNYfWZNr526naaPGPtTE_Cmi3EwPXOV2S1oL38PdSMCVoDtVfh-4i4A7dWMSSfwMPnuTf6pXiJynImY68Emqrhl9cutADFLzrjDg8bE7FA",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": 4533,\n        \"year\": 1981\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:19150/api/Films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19150",
+					"path": [
+						"api",
+						"Films"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

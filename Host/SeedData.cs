@@ -7,7 +7,6 @@ using System.Linq;
 using System.Security.Claims;
 using Host.Data;
 using IdentityModel;
-using IdentityServer.ActiveDirectory;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,6 +39,7 @@ namespace Host
                         new Claim(JwtClaimTypes.FamilyName, "Vilachan"),
                         new Claim(JwtClaimTypes.Email, "manuel.vilachan@expertscoding.es"),
                         new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
+                        new Claim(JwtClaimTypes.Role, "Consultant"),
                         new Claim(JwtClaimTypes.WebSite, "http://www.expertscoding.es"),
                         new Claim(JwtClaimTypes.Address, @"{ 'street_address': 'One Hacker Way', 'locality': 'Heidelberg', 'postal_code': 69118, 'country': 'Germany' }", IdentityServer4.IdentityServerConstants.ClaimValueTypes.Json)
                     }).Result;

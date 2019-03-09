@@ -50,6 +50,9 @@ namespace Host.Configuration
                     RedirectUris = { "http://localhost:21402/signin-oidc" },
                     FrontChannelLogoutUri = "http://localhost:21402/signout-oidc",
                     PostLogoutRedirectUris = { "http://localhost:21402/signout-callback-oidc" },
+                    //RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    //FrontChannelLogoutUri = "http://localhost:5002/signout-oidc",
+                    //PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
                     AlwaysSendClientClaims = true,
@@ -63,6 +66,34 @@ namespace Host.Configuration
                         "ECApi"
                     }
                 },
+                ///////////////////////////////////////////
+                // Android native app
+                //////////////////////////////////////////
+                new Client
+                {
+                    ClientId = "T3chfest-DroidNative",
+                    ClientName = "Android EC Application",
+                    ClientUri = "http://www.expertscoding.es",
+                    
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+
+                    RedirectUris = { "com.ec.T3chfest-DroidNative:/callback" },
+
+                    AllowOfflineAccess = true,
+                    AlwaysSendClientClaims = true,
+
+                    AllowedScopes = 
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
+                    }
+                },
+                ///////////////////////////////////////////
+                // Postman client credentials
+                //////////////////////////////////////////
                 new Client
                 {
                     ClientId = "postman",

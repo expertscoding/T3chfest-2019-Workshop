@@ -44,8 +44,8 @@ namespace ECApi
 
             services.AddAuthorization(options => options.AddPolicy("ECApiPolicy", builder => builder.RequireScope("ECApi")));
 
-            services.AddSingleton<IAuthorizationPolicyProvider, ECPolicyProvider>();
-            services.AddTransient(typeof(IAuthorizationHandler), typeof(DayHandler));
+            //services.AddSingleton<IAuthorizationPolicyProvider, ECPolicyProvider>();
+            //services.AddTransient(typeof(IAuthorizationHandler), typeof(DayHandler));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

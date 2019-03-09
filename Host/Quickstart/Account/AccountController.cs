@@ -18,7 +18,7 @@ using IdentityModel;
 using System.Linq;
 using System;
 using System.Collections.Generic;
-using IdentityServer.ActiveDirectory;
+using Host.Data;
 
 namespace IdentityServer4.Quickstart.UI
 {

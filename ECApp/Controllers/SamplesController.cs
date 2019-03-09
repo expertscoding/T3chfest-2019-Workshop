@@ -40,6 +40,7 @@ namespace ECApp.Controllers
 
         [HttpGet]
         //[Authorize(Roles = "Admin")]
+        //[Authorize("AdminPolicy")]
         [Authorize("HasValidEmail")]
         public IActionResult Edit(int? id)
         {

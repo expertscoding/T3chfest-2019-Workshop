@@ -1,8 +1,13 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using OktaDemo.XF.Interfaces;
+using OktaDemo.XF.Pages;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly:XamlCompilation(XamlCompilationOptions.Compile)]
-namespace OAuthNativeFlow
+namespace OktaDemo.XF
 {
     public partial class App : Application
     {
@@ -10,7 +15,7 @@ namespace OAuthNativeFlow
         {
             InitializeComponent();
 
-            MainPage = new OAuthNativeFlowPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

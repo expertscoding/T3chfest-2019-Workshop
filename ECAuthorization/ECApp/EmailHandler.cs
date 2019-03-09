@@ -26,7 +26,7 @@ namespace ECAuthorization.ECApp
             }
 
             if (success) context.Succeed(requirement);
-
+            
             return Task.CompletedTask;
         }
     }

@@ -37,26 +37,7 @@ namespace Host
                 .AddInMemoryApiResources(Resources.GetApiResources())
                 .AddInMemoryClients(Clients.Get())
                 .AddAspNetIdentity<ApplicationUser>();
-            //.AddActiveDirectoryIdentity<ApplicationUser>(options =>
-            //{
-            //    options.DomainName = Configuration.GetSection("ActiveDirectory")?["DomainName"];
-            //    options.DomainUser = Configuration.GetSection("ActiveDirectory")?["DomainUser"];
-            //    options.DomainCryptPassword = Configuration.GetSection("ActiveDirectory")?["DomainPassword"];
-            //});
 
-            services.AddAuthentication()
-                //Google Developer Console https://console.cloud.google.com/apis/credentials
-                .AddGoogle(options =>
-                {
-                    options.ClientId = "813017584167-dqd2qoo9oau2khmg0binpefnjgq5udar.apps.googleusercontent.com";
-                    options.ClientSecret = "Vh0P8HMQbIDJ4E2PK5XEkiQj";
-                })
-                //Microsoft Developer Console https://apps.dev.microsoft.com/#/appList
-                .AddMicrosoftAccount(options =>
-                {
-                    options.ClientId = "2d8b1dbd-7bb4-4098-b974-541523a01565";
-                    options.ClientSecret = "pbmsoaSCU59625@^mPNHJ^+";
-                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

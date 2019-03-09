@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Host.Data;
 using Host.Configuration;
-using IdentityServer.ActiveDirectory;
+using Microsoft.AspNetCore.Identity.UI;
 
 namespace Host
 {
@@ -27,6 +27,7 @@ namespace Host
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI(UIFramework.Bootstrap3)
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
@@ -37,7 +38,6 @@ namespace Host
                 .AddInMemoryApiResources(Resources.GetApiResources())
                 .AddInMemoryClients(Clients.Get())
                 .AddAspNetIdentity<ApplicationUser>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

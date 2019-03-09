@@ -7,7 +7,6 @@ using System.Linq;
 using System.Security.Claims;
 using Host.Data;
 using IdentityModel;
-using IdentityServer.ActiveDirectory;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

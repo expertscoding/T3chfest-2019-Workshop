@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace IdentityServer.ActiveDirectory
+namespace Host.Data
 {
     public class ApplicationUser : IdentityUser
     {

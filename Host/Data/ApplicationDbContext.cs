@@ -1,5 +1,4 @@
-﻿using IdentityServer.ActiveDirectory;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Host.Data
